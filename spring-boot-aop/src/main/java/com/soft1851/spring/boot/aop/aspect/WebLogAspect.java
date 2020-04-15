@@ -31,7 +31,7 @@ public class WebLogAspect {
 
     private ThreadLocal<Map<String, Object>> threadLocal = new ThreadLocal<>();
 
-    @Pointcut("execution(public * com.soft1851.spring.boot.aop.controller..*.*(..))")
+    @Pointcut("execution(public * com.soft1851.spring.boot.aop.controller.HelloController*.*(..))")
     public void webLog() {
 
     }

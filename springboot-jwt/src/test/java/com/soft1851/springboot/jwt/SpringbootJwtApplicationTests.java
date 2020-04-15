@@ -1,14 +1,13 @@
-package com.soft1851.spring.boot.aop;
+package com.soft1851.springboot.jwt;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBootAopApplicationTests {
+class SpringbootJwtApplicationTests {
 
     @Test
     void contextLoads() {
-        System.out.println(1);
     }
 
 }

@@ -1,0 +1,31 @@
+server:
+  port: 8081
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm ss
+    time-zone: GMT+8
+  datasource:
+    url: jdbc:mysql://rm-m5ee476bu350735gjeo.mysql.rds.aliyuncs.com:3306/wl_stdb?useUnicode=true&characterEncoding=utf8&useSSL=false&autoReconnect=true
+    username: root
+    password: XuNiit_#
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 20
+      auto-commit: true
+      connection-timeout: 10000
+      max-lifetime: 60000
+      idle-timeout: 30000
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.soft1851.springboot.mbp.entity
+  global-config:
+    db-config:
+
+          id-type: auto
+
+
+          table-underline: true
+#          db-type: mysql

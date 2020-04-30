@@ -38,7 +38,7 @@ public class CreateToken {
         Date start = new Date();
         //一小时有效时间
 
-        LocalDateTime localDateTime = LocalDateTime.now().plusMinutes(30);
+        LocalDateTime localDateTime = LocalDateTime.now().plusSeconds(5);
         //locadatetime转换成date
 
         ZoneId zoneId = ZoneId.systemDefault();

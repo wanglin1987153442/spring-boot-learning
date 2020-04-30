@@ -22,15 +22,19 @@ public class AuthInterceptor implements HandlerInterceptor {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=utf-8");
         String token = request.getHeader("Authorization");
+        String role =CreateToken.getUserRolecode(token);
+        System.out.println(role);
         if (token == null) {
             throw new JwtException("用户未登录", ResultCode.USER_NOT_SIGN_IN);
 
-        } else if (CreateToken.checkTime(token) == false) {
-            throw new JwtException("Token 过时", ResultCode.TOKEN_TIME_ERRO);
-        } else if (CreateToken.verify(token) == false) {
+        }  else if (CreateToken.verify(token) == false) {
             throw new JwtException("TOKEN错误", ResultCode.TOKEN_ERRO);
 
-        } else if (CreateToken.getUserRolecode(token) != "0") {
+        } else if (CreateToken.checkTime(token) == false) {
+            throw new JwtException("Token 过时", ResultCode.TOKEN_TIME_ERRO);
+        }
+
+        else if (role.equals("0")) {
             throw new JwtException("权限不足", ResultCode.USER_NO_ENOUGHPOWER);
         } else {
             return true;

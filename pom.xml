@@ -10,6 +10,8 @@
 
     <modules>
 <module>spring-boot-aop</module>
+        <module>springboot-jwt</module>
+        <module>springboot-mybatis-plus</module>
     </modules>
 <dependencies>
 

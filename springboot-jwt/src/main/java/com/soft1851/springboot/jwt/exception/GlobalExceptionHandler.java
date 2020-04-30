@@ -46,4 +46,11 @@ public class GlobalExceptionHandler {
         return Result.failure(ResultCode.RESULT_CODE_DATA_NONE);
     }
 
+
+    @ExceptionHandler(value = {ArithmeticException.class})
+    @ResponseBody
+    public Result sendErro(ArithmeticException exception) {
+        return Result.failure(ResultCode.SPECIFIED_QUESTIONED_USER_NOT_EXIST);
+    }
+
 }
